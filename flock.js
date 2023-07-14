@@ -4,13 +4,13 @@ const width=1000;
 
 const boidSize=5;
 
-const density=60;
+const density=50;
 
-const maxSpeed=5;
+const maxSpeed=10;
 
-const ACCELERATION_RATE=0.5
+const ACCELERATION_RATE=1
 
-const RADIUS=10
+const RADIUS=20
 
 
 
@@ -26,7 +26,7 @@ class Boid
 
     getDistance(boid)
     {
-        return Math.sqrt((this.pos.x-boid.pos.x)**2,(this.pos.y-boid.pos.y)**2);
+        return Math.sqrt((this.pos.x-boid.pos.x)**2+(this.pos.y-boid.pos.y)**2);
     }
 
     align(boids)
@@ -95,6 +95,13 @@ class Boid
             this.vel.x+=this.accelaration.x * ACCELERATION_RATE;
             this.vel.y+=this.accelaration.y * ACCELERATION_RATE;
         }
+
+        else{
+            this.vel.x=this.vel.x/Math.sqrt((this.vel.x)**2,(this.vel.y)**2)*maxSpeed
+            this.vel.y=this.vel.y/Math.sqrt((this.vel.x)**2,(this.vel.y)**2)*maxSpeed
+        }
+
+    
         
 
         this.pos.x+=this.vel.x;
@@ -123,8 +130,9 @@ for (let i=0;i<density;i++)
         new Boid
         (
             {x:Math.random()*width, y:Math.random()*height},
-            {x:0,y:0},
-            {x:Math.random() * ACCELERATION_RATE,   y:Math.random() * ACCELERATION_RATE}
+            {x:Math.random() ,   y:Math.random()},
+            //{x:Math.random() * ACCELERATION_RATE,   y:Math.random() * ACCELERATION_RATE}
+            {x:0,y:0}
 
         )
     )
@@ -149,8 +157,8 @@ function update()
 
     for(let boid of boids){
         boid.draw();
-        boid.align(boids);
         boid.move();
+        boid.align(boids);
     }
     requestAnimationFrame(update)
 }
