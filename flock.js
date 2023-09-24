@@ -18,6 +18,7 @@ class Boid
 {
     constructor(pos, vel, accelaration)
     {
+        
         this.pos = pos;
         this.vel = vel;
         this.accelaration = accelaration;
