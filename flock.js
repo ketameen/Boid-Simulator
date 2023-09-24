@@ -2,14 +2,14 @@
 const height = 800;
 const width  = 800;
 
-const boidSize = 8  ;
-const density  = 100;
-const maxSpeed = 2  ;
+const boidSize     = 8  ;
+const density      = 100;
+const maxSpeed     = 2  ;
 const turnVelocity = 100;
 
 
-const TRAIL_LENGTH = 75;
-const RADIUS = 20;
+const TRAIL_LENGTH      = 75;
+const RADIUS            = 20;
 const ACCELERATION_RATE = 0.0001;
 
 
