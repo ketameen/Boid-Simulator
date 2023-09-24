@@ -1,16 +1,76 @@
 <html>
     <style>
+        *
+        {
+            font-family : Calibri;
+        }
+        #creator
+        {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #title
+        {
+            font-weight: bold;
+            font-size: x-large;
+           
+        }
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            align-content: center;
+        }
         canvas
         {
             margin: auto;
-            background-color: lightgray;
+            border: solid 1px darkgrey;
+            background-color: rgb(240, 240, 240);
+        }
+        .option_slider
+        {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .options
+        {
+            display: flex;
+            flex-direction: row;
         }
     </style>
-    <body>
-       
-    </body>
 
-    <script src="/flock.js">
 
-    </script>
+    
+    <body></body>
+    
+    <span id="title">Boid Simulation</span>
+    <span id="creator"><img src="https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png" width = "20px"/>ketameen</span>
+    <div style="height: 1px; width: 500px; background-color:darkgrey; margin: 10px"></div>
+
+    <div class="options">
+        <div class="option_slider">
+            <span>Cohesion</span>
+            <input type="range" min="0" max="100" value="0" step="0.1" id = "cohesion_slider">
+        </div>
+        <div class="option_slider">
+            <span>Seperation</span>
+            <input type="range" min="0" max="100" value="15" step="0.1" id = "seperation_slider">
+        </div>
+        <div class="option_slider">
+            <span>Alignment</span>
+            <input type="range" min="0" max="100" value="15" step="0.1" id = "alignment_slider">
+        </div>
+        <div class="option_slider">
+            <span>Range</span>
+            <input type="range" min="50" max="200" value="100" step="1" id = "range_slider">
+        </div>
+    </div>
+    
+    
+    <script src="/flock.js"></script>
+
 </html>
