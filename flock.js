@@ -32,15 +32,15 @@ class Boid
     align(boids, cohesion_rate = 0, seperation_rate = 1, alignment_rate=0, range_value)
     {
 
-        let accSum = {x:0, y:0}
+        let accSum        = {x:0, y:0}
 
-        let diff_posSum = {x:0, y:0}
+        let diff_posSum   = {x:0, y:0}
 
-        let posSum = {x:0, y:0}
+        let posSum        = {x:0, y:0}
 
         let totalDistance = 0
 
-        let numBoids = 0
+        let numBoids      = 0
 
         for(let boid of boids)
         {
@@ -180,6 +180,7 @@ for (let i=0; i<density; i++)
     {
         x_position = Math.random() * (width  - 200 ) + width/2;
         y_position = Math.random() * (height - 200 ) + height/2;
+
         current_boid = new Boid
         (
             {x : x_position, y : y_position},
